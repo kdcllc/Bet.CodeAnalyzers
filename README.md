@@ -11,7 +11,6 @@ Update version # in the following files:
 
 1. Bet.CodeAnalyzers.nuspec
 2. Bet.CodeAnalyzers.props
-3. appveyor.yml
 
 ```bash
     dotnet pack -c Release /p:NuspecFile=Bet.CodeAnalyzers.nuspec /p:GeneratePackageOnBuild=true
