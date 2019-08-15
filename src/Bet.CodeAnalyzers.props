@@ -2,7 +2,7 @@
 <Project>
   <PropertyGroup>
     <!-- UPDATE -->
-    <CodeAnalysisRuleSetLocation Condition=" '$(NuGetPackageRoot)' != '' ">$(NuGetPackageRoot)Bet.CodeAnalyzers\1.0.1</CodeAnalysisRuleSetLocation>
+    <CodeAnalysisRuleSetLocation Condition=" '$(NuGetPackageRoot)' != '' ">$(NuGetPackageRoot)Bet.CodeAnalyzers\1.0.2</CodeAnalysisRuleSetLocation>
   </PropertyGroup>
   <PropertyGroup>
     <CodeAnalysisRuleSet>$(CodeAnalysisRuleSetLocation)\Bet.CodeAnalyzers.ruleset</CodeAnalysisRuleSet>

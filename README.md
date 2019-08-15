@@ -18,7 +18,7 @@ Update version # in the following files:
 
 ## References
 
-[Sharing configuration among solutions](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/Configuration.md#sharing-configuration-among-solutions)
-[MyCustomStyleCopAnalyzerPackage](https://github.com/markvincze/MyCustomStyleCopAnalyzerPackage)
-[Create a NuGet package using the dotnet CLI](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package-dotnet-cli)
-[How to get a stylecop ruleset trough nuget in a .net standard project](https://stackoverflow.com/questions/52742473/how-to-get-a-stylecop-ruleset-trough-nuget-in-a-net-standard-project)
+- [Sharing configuration among solutions](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/Configuration.md#sharing-configuration-among-solutions)
+- [MyCustomStyleCopAnalyzerPackage](https://github.com/markvincze/MyCustomStyleCopAnalyzerPackage)
+- [Create a NuGet package using the dotnet CLI](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package-dotnet-cli)
+- [How to get a stylecop ruleset trough nuget in a .net standard project](https://stackoverflow.com/questions/52742473/how-to-get-a-stylecop-ruleset-trough-nuget-in-a-net-standard-project)
