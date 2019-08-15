@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project>
   <PropertyGroup>
-    <CodeAnalysisRuleSetLocation Condition=" '$(NuGetPackageRoot)' != '' ">$(NuGetPackageRoot)Bet.CodeAnalyzers\1.0.0</CodeAnalysisRuleSetLocation>
+    <!-- UPDATE -->
+    <CodeAnalysisRuleSetLocation Condition=" '$(NuGetPackageRoot)' != '' ">$(NuGetPackageRoot)Bet.CodeAnalyzers\1.0.1</CodeAnalysisRuleSetLocation>
   </PropertyGroup>
   <PropertyGroup>
     <CodeAnalysisRuleSet>$(CodeAnalysisRuleSetLocation)\Bet.CodeAnalyzers.ruleset</CodeAnalysisRuleSet>
