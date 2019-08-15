@@ -1,0 +1,33 @@
+version: 1.0.{build}
+branches:
+    only:
+      - master
+pull_requests:
+  do_not_increment_build_number: true
+image: Visual Studio 2017
+## temporary until 3.0.100-preview8-013656 sdk is installed
+install:
+  - ps: $urlCurrent = "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/3.0.100-preview8-013656/dotnet-sdk-3.0.100-preview8-013656-win-x64.zip"
+  - ps: $env:DOTNET_INSTALL_DIR = "$pwd\.dotnetsdk"
+  - ps: mkdir $env:DOTNET_INSTALL_DIR -Force | Out-Null
+  - ps: $tempFileCurrent = [System.IO.Path]::GetTempFileName()
+  - ps: (New-Object System.Net.WebClient).DownloadFile($urlCurrent, $tempFileCurrent)
+  - ps: Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::ExtractToDirectory($tempFileCurrent, $env:DOTNET_INSTALL_DIR)
+  - ps: $env:Path = "$env:DOTNET_INSTALL_DIR;$env:Path"
+nuget:
+  disable_publish_on_pr: true
+
+build_script:
+  - ps: dotnet pack -c Release /p:NuspecFile=Bet.CodeAnalyzers.nuspec /p:GeneratePackageOnBuild=true
+
+artifacts:
+- path: .\src\**\*.nupkg
+  name: NuGet package
+
+deploy:
+- provider: NuGet
+  artifact: /NuGet/
+  api_key:
+    secure: jrexooMHJwdbj5MGacSL9fCj3g2haDXMarPEkiLpdIZmasb/zeMYb0NVofvi5HvJ
+  on:
+    branch: master
