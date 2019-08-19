@@ -1,17 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project>
-  <PropertyGroup>
-    <CodeAnalysisRuleSetLocation Condition=" '$(NuGetPackageRoot)' != '' ">$(NuGetPackageRoot)Bet.CodeAnalyzers\1.0.5</CodeAnalysisRuleSetLocation>
-    <CodeAnalysisRuleSetLocation Condition=" '$(CodeAnalysisRuleSetLocation)' == '' and '$(SolutionDir)' != '' ">$(SolutionDir)\packages\bet.codeanalyzers.1.0.5</CodeAnalysisRuleSetLocation>
-    <CodeAnalysisRuleSetLocation Condition=" '$(CodeAnalysisRuleSetLocation)' == '' ">$([System.IO.Path]::GetDirectoryName($(MSBuildProjectDirectory)))\packages\bet.codeanalyzers.1.0.5</CodeAnalysisRuleSetLocation>
+  <!-- <PropertyGroup>
+    <CodeAnalysisRuleSetLocation Condition=" '$(NuGetPackageRoot)' != '' ">$(NuGetPackageRoot)Bet.CodeAnalyzers\1.0.3</CodeAnalysisRuleSetLocation>
+    <CodeAnalysisRuleSetLocation Condition=" '$(CodeAnalysisRuleSetLocation)' == '' and '$(SolutionDir)' != '' ">$(SolutionDir)\packages\bet.codeanalyzers.1.0.3</CodeAnalysisRuleSetLocation>
+    <CodeAnalysisRuleSetLocation Condition=" '$(CodeAnalysisRuleSetLocation)' == '' ">$([System.IO.Path]::GetDirectoryName($(MSBuildProjectDirectory)))\packages\bet.codeanalyzers.1.0.3</CodeAnalysisRuleSetLocation>
   </PropertyGroup>
   <PropertyGroup>
     <CodeAnalysisRuleSet>$(CodeAnalysisRuleSetLocation)\Bet.CodeAnalyzers.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-  <!-- <ItemGroup>
+  <ItemGroup>
     <AdditionalFiles Include="$(CodeAnalysisRuleSetLocation)\stylecop.json" Link="stylecop.json" />
   </ItemGroup> -->
-
+  <PropertyGroup>
+    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)..\Bet.CodeAnalyzers.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <AdditionalFiles Include="$(MSBuildThisFileDirectory)..\stylecop.json" />
   </ItemGroup>
