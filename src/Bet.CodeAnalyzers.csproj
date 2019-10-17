@@ -5,7 +5,8 @@
 
   <ItemGroup>
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" IncludeAssets="all" />
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.4" IncludeAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.6" IncludeAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="2.9.6" IncludeAssets="all"/>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Bet.CodeAnalyzers.props" />
