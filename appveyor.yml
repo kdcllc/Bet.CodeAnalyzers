@@ -19,7 +19,7 @@ nuget:
   disable_publish_on_pr: true
 
 build_script:
-  - ps: dotnet pack -c Release /p:NuspecFile=Bet.CodeAnalyzers.nuspec /p:GeneratePackageOnBuild=true
+  - ps: dotnet pack -c Release /p:NuspecFile=Bet.CodeAnalyzers.nuspec /p:GeneratePackageOnBuild=true -NoDefaultExcludes
 
 artifacts:
 - path: .\src\**\*.nupkg

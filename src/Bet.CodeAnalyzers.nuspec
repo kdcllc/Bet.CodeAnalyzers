@@ -22,7 +22,6 @@
 
   </metadata>
   <files>
-    <file src=".editorconfig" target="" />
     <file src="stylecop.json" target="" />
     <file src="Bet.CodeAnalyzers.ruleset" target="" />
     <file src="Bet.CodeAnalyzers.props" target="build" />
