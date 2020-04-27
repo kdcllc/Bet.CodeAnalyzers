@@ -1,0 +1,47 @@
+<Project>
+
+  <PropertyGroup Label="Basic Settings">
+    <IsPackable>true</IsPackable>
+    <VersionPrefix>1.0.8-preview4</VersionPrefix>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
+    <NoWarn>$(NoWarn);CS1591;CS1574;CS1572</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Ownership Settings">
+    <Company>King David Consulting LLC</Company>
+    <Authors>kdcllc</Authors>
+    <Copyright>King David Consulting LLC</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Nuget Package Settings">
+		<Description>King Dadic Consulting LLC Code Analyzers.</Description>
+		<PackageProjectUrl>https://github.com/kdcllc/Bet.CodeAnalyzers</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/kdcllc/Bet.CodeAnalyzers.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+		<PackageLicense>https://github.com/kdcllc/Bet.CodeAnalyzers/blob/master/LICENSE</PackageLicense>
+
+    <!-- https://docs.microsoft.com/en-us/nuget/reference/errors-and-warnings/nu5048 -->
+    <PackageIcon>icon.png</PackageIcon>
+
+    <tags>DotnetCore, AspNetCore, CodeAnalyzers, Analyzers, StyleCop, StyleCopAnalyzers</tags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Label="SourceLink Settings">
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+
+    <!-- https://github.com/kdcllc/Bet.AspNetCore/issues/103 -->
+    <DebugType>Embedded</DebugType>
+    <EmbedAllSources>True</EmbedAllSources>
+  </PropertyGroup>
+</Project>

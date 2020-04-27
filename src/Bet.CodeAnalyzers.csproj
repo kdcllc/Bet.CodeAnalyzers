@@ -1,16 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;</TargetFrameworks>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Roslynator.Analyzers" Version="2.3.0"/>
+    <PackageReference Include="Roslynator.CodeAnalysis.Analyzers" Version="1.0.0-beta"/>
+    <PackageReference Include="Roslynator.Formatting.Analyzers" Version="1.0.0-rc" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" IncludeAssets="all" />
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.6" IncludeAssets="all" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="2.9.6" IncludeAssets="all"/>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.0.0" />
   </ItemGroup>
+
   <ItemGroup>
-    <Content Include="Bet.CodeAnalyzers.props" />
-    <Content Include="Bet.CodeAnalyzers.ruleset" />
-    <Content Include="stylecop.json" />
+    <None Include="stylecop.json" Pack="true"/>
+    <None Include=".editorconfig" Pack="true"/>
+    <None Include="build\**" Pack="True" PackagePath="build\" />
   </ItemGroup>
 </Project>
