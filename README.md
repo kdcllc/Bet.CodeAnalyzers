@@ -7,20 +7,8 @@
 
 Re-usable 'ruleset' nuget package for Code Analyzers.
 
-## Publish Nuget Package
-
-Update version # in the following files:
-
-1. Bet.CodeAnalyzers.nuspec
-2. Bet.CodeAnalyzers.props
+## Intall
 
 ```bash
-    dotnet pack -c Release /p:NuspecFile=Bet.CodeAnalyzers.nuspec /p:GeneratePackageOnBuild=true
+     dotnet add package Bet.CodeAnalyzers
 ```
-
-## References
-
-- [Sharing configuration among solutions](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/Configuration.md#sharing-configuration-among-solutions)
-- [MyCustomStyleCopAnalyzerPackage](https://github.com/markvincze/MyCustomStyleCopAnalyzerPackage)
-- [Create a NuGet package using the dotnet CLI](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package-dotnet-cli)
-- [How to get a stylecop ruleset trough nuget in a .net standard project](https://stackoverflow.com/questions/52742473/how-to-get-a-stylecop-ruleset-trough-nuget-in-a-net-standard-project)

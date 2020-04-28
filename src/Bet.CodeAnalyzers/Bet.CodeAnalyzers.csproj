@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <CodeAnalysisRuleSet>build\Bet.CodeAnalyzers.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <CodeAnalysisRuleSet>build\Bet.CodeAnalyzers.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Roslynator.Analyzers" Version="2.3.0" />
+    <PackageReference Include="Roslynator.CodeAnalysis.Analyzers" Version="1.0.0-beta" />
+    <PackageReference Include="Roslynator.Formatting.Analyzers" Version="1.0.0-rc" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="stylecop.json" Pack="true" />
+    <None Include="build\**" Pack="True" PackagePath="build\" />
+  </ItemGroup>
+</Project>

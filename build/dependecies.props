@@ -9,6 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="$(RepoRoot)/img/icon.png" Pack="true" Visible="false" PackagePath="" />
+    <None Include="../../img/icon.png" Pack="true" Visible="false" PackagePath="" />
   </ItemGroup>
 </Project>

@@ -19,7 +19,10 @@ nuget:
   disable_publish_on_pr: true
 
 build_script:
-  - ps: dotnet pack -c Release /p:NuspecFile=Bet.CodeAnalyzers.nuspec /p:GeneratePackageOnBuild=true
+  - ps: dotnet nuget locals --clear all
+  - ps: dotnet restore Bet.CodeAnalyzers.sln -v quiet
+  - ps: dotnet build Bet.CodeAnalyzers.sln  --no-restore -p:configuration=Release -p:Version=$($env:appveyor_build_version) -p:GeneratePackageOnBuild=true
+  - ps: dotnet pack Bet.CodeAnalyzers.sln  --no-build -p:configuration=Release -p:Version=$($env:appveyor_build_version) -o packages
 
 artifacts:
 - path: .\src\**\*.nupkg

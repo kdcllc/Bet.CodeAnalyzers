@@ -2,7 +2,7 @@
 
   <PropertyGroup Label="Basic Settings">
     <IsPackable>true</IsPackable>
-    <VersionPrefix>1.0.8-preview4</VersionPrefix>
+    <VersionPrefix>1.0.8-preview1.4</VersionPrefix>
     <LangVersion>latest</LangVersion>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29209.152
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bet.CodeAnalyzers", "src\Bet.CodeAnalyzers.csproj", "{BC59468F-BC33-41D0-8958-6134FDF9CED0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bet.CodeAnalyzers", "src\Bet.CodeAnalyzers\Bet.CodeAnalyzers.csproj", "{BC59468F-BC33-41D0-8958-6134FDF9CED0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bet.EditorConfig", "src\Bet.EditorConfig\Bet.EditorConfig.csproj", "{F37C03D4-0BD7-4AB6-98B6-33C7BF4C2DA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{BC59468F-BC33-41D0-8958-6134FDF9CED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC59468F-BC33-41D0-8958-6134FDF9CED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC59468F-BC33-41D0-8958-6134FDF9CED0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F37C03D4-0BD7-4AB6-98B6-33C7BF4C2DA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F37C03D4-0BD7-4AB6-98B6-33C7BF4C2DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F37C03D4-0BD7-4AB6-98B6-33C7BF4C2DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F37C03D4-0BD7-4AB6-98B6-33C7BF4C2DA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
