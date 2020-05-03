@@ -25,7 +25,7 @@ build_script:
   - ps: dotnet pack Bet.CodeAnalyzers.sln  --no-build -p:configuration=Release -p:Version=$($env:appveyor_build_version) -o packages
 
 artifacts:
-- path: .\src\**\*.nupkg
+- path: .\packages\**\*.nupkg
   name: NuGet package
 
 deploy:
