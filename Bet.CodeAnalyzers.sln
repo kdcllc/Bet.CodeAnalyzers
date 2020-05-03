@@ -3,7 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29209.152
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bet.CodeAnalyzers", "src\Bet.CodeAnalyzers.csproj", "{BC59468F-BC33-41D0-8958-6134FDF9CED0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bet.CodeAnalyzers", "src\Bet.CodeAnalyzers\Bet.CodeAnalyzers.csproj", "{BC59468F-BC33-41D0-8958-6134FDF9CED0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bet.EditorConfig", "src\Bet.EditorConfig\Bet.EditorConfig.csproj", "{F37C03D4-0BD7-4AB6-98B6-33C7BF4C2DA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A9D0E4D4-8D53-4D8A-872C-F04FF37A61D7}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{378AE213-7E25-452F-879D-9422B41D4432}"
+	ProjectSection(SolutionItems) = preProject
+		build\dependecies.props = build\dependecies.props
+		build\settings.props = build\settings.props
+		build\sources.props = build\sources.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +34,10 @@ Global
 		{BC59468F-BC33-41D0-8958-6134FDF9CED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC59468F-BC33-41D0-8958-6134FDF9CED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC59468F-BC33-41D0-8958-6134FDF9CED0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F37C03D4-0BD7-4AB6-98B6-33C7BF4C2DA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F37C03D4-0BD7-4AB6-98B6-33C7BF4C2DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F37C03D4-0BD7-4AB6-98B6-33C7BF4C2DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F37C03D4-0BD7-4AB6-98B6-33C7BF4C2DA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,23 +2,25 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/ywdhk854tdo6ne1s/branch/master?svg=true)](https://ci.appveyor.com/project/kdcllc/bet-codeanalyzers/branch/master)
 [![NuGet](https://img.shields.io/nuget/v/Bet.CodeAnalyzers.svg)](https://www.nuget.org/packages?q=Bet.CodeAnalyzers)
+![Nuget](https://img.shields.io/nuget/dt/Bet.CodeAnalyzers)
+[![feedz.io](https://img.shields.io/badge/endpoint.svg?url=https://f.feedz.io/kdcllc/kdcllc/shield/Bet.CodeAnalyzers/latest)](https://f.feedz.io/kdcllc/cronscheduler-aspnetcore/packages/Bet.CodeAnalyzers/latest/download)
 
 Re-usable 'ruleset' nuget package for Code Analyzers.
 
-## Publish Nuget Package
-
-Update version # in the following files:
-
-1. Bet.CodeAnalyzers.nuspec
-2. Bet.CodeAnalyzers.props
+## Intall
 
 ```bash
-    dotnet pack -c Release /p:NuspecFile=Bet.CodeAnalyzers.nuspec /p:GeneratePackageOnBuild=true
+     # analyzers and rules
+     dotnet add package Bet.CodeAnalyzers
+
+     # default .editorconfig
+     dotnet add package Bet.EditorConfig
 ```
+
+
+Cached packages location `%USERPROFILE%\.nuget\packages\`.
+
 
 ## References
 
-- [Sharing configuration among solutions](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/Configuration.md#sharing-configuration-among-solutions)
-- [MyCustomStyleCopAnalyzerPackage](https://github.com/markvincze/MyCustomStyleCopAnalyzerPackage)
-- [Create a NuGet package using the dotnet CLI](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package-dotnet-cli)
-- [How to get a stylecop ruleset trough nuget in a .net standard project](https://stackoverflow.com/questions/52742473/how-to-get-a-stylecop-ruleset-trough-nuget-in-a-net-standard-project)
+- [Shipping a cross-platform MSBuild task in a NuGet package](https://natemcmaster.com/blog/2017/07/05/msbuild-task-in-nuget/)
