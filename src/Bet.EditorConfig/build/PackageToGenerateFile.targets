@@ -1,4 +1,0 @@
-
-<Project>
-    <Copy SourceFiles="$(MSBuildThisFileDirectory)\.editorconfig" DestinationFolder="$(ProjectDir)"/>
-</Project>

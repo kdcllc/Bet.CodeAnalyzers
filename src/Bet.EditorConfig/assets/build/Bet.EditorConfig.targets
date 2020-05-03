@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup>
+    <CompileDependsOn>InstallEditorConfig;$(CompileDependsOn)</CompileDependsOn>
+  </PropertyGroup>
+
+  <Target
+      Name="InstallEditorConfig"
+      BeforeTargets="Compile">
+    <InstallEditorConfigTask ProjectDir="$(ProjectDir)" ReferenceEditorConfig="$(ReferenceEditorConfig)" />
+  </Target>
+
+</Project>

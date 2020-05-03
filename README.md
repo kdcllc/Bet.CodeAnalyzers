@@ -12,3 +12,11 @@ Re-usable 'ruleset' nuget package for Code Analyzers.
 ```bash
      dotnet add package Bet.CodeAnalyzers
 ```
+
+
+Cached packages location `%USERPROFILE%\.nuget\packages\`.
+
+
+## References
+
+- [Shipping a cross-platform MSBuild task in a NuGet package](https://natemcmaster.com/blog/2017/07/05/msbuild-task-in-nuget/)
