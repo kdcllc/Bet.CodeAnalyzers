@@ -1,7 +1,7 @@
 ﻿<Project TreatAsLocalProperty="TaskFolder;TaskAssembly">
   <PropertyGroup>
     <InstallEditorConfigTaskFolder Condition=" '$(MSBuildRuntimeType)' == 'Core' ">netstandard2.0</InstallEditorConfigTaskFolder>
-    <InstallEditorConfigTaskFolder Condition=" '$(MSBuildRuntimeType)' != 'Core' ">net46</InstallEditorConfigTaskFolder>
+    <InstallEditorConfigTaskFolder Condition=" '$(MSBuildRuntimeType)' != 'Core' ">net472</InstallEditorConfigTaskFolder>
     <InstallEditorConfigTaskAssembly>$(InstallEditorConfigTaskFolder)\Bet.EditorConfig.dll</InstallEditorConfigTaskAssembly>
   </PropertyGroup>
 
