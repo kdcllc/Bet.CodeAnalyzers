@@ -13,7 +13,7 @@ on:
 # environment vars
 env:
   configuration: Release
-  solution: Bet.CodeAnalyzers.sln
+  solution: Bet.CodeAnalyzers.slnx
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

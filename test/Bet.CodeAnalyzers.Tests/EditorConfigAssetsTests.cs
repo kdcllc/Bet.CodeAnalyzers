@@ -14,7 +14,7 @@ namespace Bet.CodeAnalyzers.Tests
             DirectoryInfo repoRoot = null;
             while (dir != null)
             {
-                if (File.Exists(Path.Combine(dir.FullName, "Bet.CodeAnalyzers.sln")))
+                if (File.Exists(Path.Combine(dir.FullName, "Bet.CodeAnalyzers.slnx")))
                 {
                     repoRoot = dir;
                     break;
