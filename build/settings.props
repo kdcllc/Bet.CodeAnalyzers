@@ -2,7 +2,7 @@
 
   <PropertyGroup Label="Basic Settings">
     <IsPackable>true</IsPackable>
-    <VersionPrefix>1.0.12-preview1</VersionPrefix>
+    <VersionPrefix>2.0.0-preview1</VersionPrefix>
     <LangVersion>latest</LangVersion>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
@@ -25,7 +25,7 @@
     <PackageProjectUrl>https://github.com/kdcllc/Bet.CodeAnalyzers</PackageProjectUrl>
     <RepositoryUrl>https://github.com/kdcllc/Bet.CodeAnalyzers.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageLicense>https://github.com/kdcllc/Bet.CodeAnalyzers/blob/master/LICENSE</PackageLicense>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 
     <!-- https://docs.microsoft.com/en-us/nuget/reference/errors-and-warnings/nu5048 -->
     <PackageIcon>icon.png</PackageIcon>
