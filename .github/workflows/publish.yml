@@ -82,15 +82,4 @@ jobs:
       - name: Display GitVersion outputs
         run: |
           echo "Version: ${{ needs.build.outputs.Version }}"
-          echo "Version: ${{ needs.build.outputs.Version }}"
           echo "CommitsSinceVersionSource: ${{ needs.build.outputs.CommitsSinceVersionSource }}"
-
-      - name: Create Tag and Release
-        id: create_release
-        uses: actions/create-release@v1.1.4
-        if: needs.build.outputs.CommitsSinceVersionSource > 0 # only create a release if there has been a commit
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this token is provided by actions not need to create
-        with:
-          tag_name: ${{ needs.build.outputs.Version }}
-          release_name: Release ${{ needs.build.outputs.Version }}
