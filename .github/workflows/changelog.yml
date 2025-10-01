@@ -1,0 +1,142 @@
+name: "Generate Changelog"
+
+# Triggers when pull requests are merged to master
+on:
+  pull_request:
+    branches: [master]
+    types: [closed]
+
+jobs:
+  generate-changelog:
+    # Only run if the PR was merged (not just closed)
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # to fetch all history for all tags and branches
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: "8.0.x"
+
+      # https://github.com/GitTools/actions/blob/main/docs/examples/github/gitversion/setup.md#usage-examples
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v3.2.1
+        with:
+         versionSpec: '6.3.x'
+
+      # https://github.com/GitTools/actions/blob/main/docs/examples/github/gitversion/execute/usage-examples.md
+      - name: Use GitVersion
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v3.2.1
+
+      - name: Display GitVersion outputs
+        run: |
+          echo "Version: ${{ steps.gitversion.outputs.semVer }}"
+          echo "CommitsSinceVersionSource: ${{ steps.gitversion.outputs.commitsSinceVersionSource }}"
+          echo "PreReleaseTag: ${{ steps.gitversion.outputs.preReleaseTagWithDash }}"
+
+      - name: Generate Changelog
+        if: steps.gitversion.outputs.commitsSinceVersionSource > 0
+        id: generate_changelog
+        uses: mikepenz/release-changelog-builder-action@v4
+        with:
+          configuration: ".github/changelog-configuration.json"
+          toTag: ${{ steps.gitversion.outputs.semVer }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update CHANGELOG.md
+        if: steps.gitversion.outputs.commitsSinceVersionSource > 0
+        run: |
+          # Get current date
+          CURRENT_DATE=$(date +"%Y-%m-%d")
+          VERSION="${{ steps.gitversion.outputs.semVer }}"
+
+          echo "Updating CHANGELOG.md for version $VERSION..."
+
+          # Create temporary file with new changelog entry
+          cat > temp_changelog.md << 'EOF'
+          # Changelog
+
+          All notable changes to this project will be documented in this file.
+
+          The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+          and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+          ## [Unreleased]
+
+          EOF
+
+          # Add the new version section
+          echo "" >> temp_changelog.md
+          echo "## [$VERSION] - $CURRENT_DATE" >> temp_changelog.md
+          echo "" >> temp_changelog.md
+          echo "${{ steps.generate_changelog.outputs.changelog }}" >> temp_changelog.md
+          echo "" >> temp_changelog.md
+
+          # Append existing changelog content (skip the header and unreleased section)
+          if [ -f CHANGELOG.md ]; then
+            # Extract everything after the [Unreleased] section until the end, but before the links
+            awk '
+              BEGIN { in_unreleased=0; in_links=0 }
+              /^## \[Unreleased\]/ { in_unreleased=1; next }
+              /^## \[/ && in_unreleased { in_unreleased=0; print; next }
+              /^\[.*\]: https:/ { in_links=1 }
+              !in_unreleased && !in_links { print }
+            ' CHANGELOG.md >> temp_changelog.md
+          fi
+
+          # Add the version links at the end
+          echo "" >> temp_changelog.md
+
+          # Get the previous version for comparison link
+          PREV_VERSION=$(git describe --tags --abbrev=0 2>/dev/null | sed 's/^v//' || echo "")
+
+          if [ -n "$PREV_VERSION" ] && [ "$PREV_VERSION" != "$VERSION" ]; then
+            echo "[Unreleased]: https://github.com/kdcllc/Bet.CodeAnalyzers/compare/v$VERSION...HEAD" >> temp_changelog.md
+            echo "[$VERSION]: https://github.com/kdcllc/Bet.CodeAnalyzers/compare/v$PREV_VERSION...v$VERSION" >> temp_changelog.md
+          else
+            echo "[Unreleased]: https://github.com/kdcllc/Bet.CodeAnalyzers/compare/v$VERSION...HEAD" >> temp_changelog.md
+            echo "[$VERSION]: https://github.com/kdcllc/Bet.CodeAnalyzers/releases/tag/v$VERSION" >> temp_changelog.md
+          fi
+
+          # Add any existing version links (excluding the ones we just added)
+          if [ -f CHANGELOG.md ]; then
+            grep '^\[.*\]: https:' CHANGELOG.md | grep -v "\[Unreleased\]:" | grep -v "\[$VERSION\]:" >> temp_changelog.md || true
+          fi
+
+          # Replace the original file
+          mv temp_changelog.md CHANGELOG.md
+
+      - name: Commit updated CHANGELOG.md
+        if: steps.gitversion.outputs.commitsSinceVersionSource > 0
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add CHANGELOG.md
+
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to CHANGELOG.md"
+          else
+            git commit -m "CHORE: Update CHANGELOG.md for version ${{ steps.gitversion.outputs.semVer }}"
+            git push
+            echo "CHANGELOG.md updated and pushed"
+          fi
+
+      - name: Create GitHub Release
+        if: steps.gitversion.outputs.commitsSinceVersionSource > 0
+        uses: actions/create-release@v1.1.4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.gitversion.outputs.semVer }}
+          release_name: Release v${{ steps.gitversion.outputs.semVer }}
+          body: ${{ steps.generate_changelog.outputs.changelog }}
+          draft: false
+          prerelease: false
