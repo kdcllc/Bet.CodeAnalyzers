@@ -76,7 +76,3 @@ Best practices:
 ## References
 
 - [Shipping a cross-platform MSBuild task in a NuGet package](https://natemcmaster.com/blog/2017/07/05/msbuild-task-in-nuget/)
-
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for a detailed history of changes to this project.
