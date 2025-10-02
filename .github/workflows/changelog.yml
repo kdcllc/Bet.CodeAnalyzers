@@ -129,14 +129,3 @@ jobs:
             echo "CHANGELOG.md updated and pushed"
           fi
 
-      - name: Create GitHub Release
-        if: steps.gitversion.outputs.commitsSinceVersionSource > 0
-        uses: actions/create-release@v1.1.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v${{ steps.gitversion.outputs.semVer }}
-          release_name: Release v${{ steps.gitversion.outputs.semVer }}
-          body: ${{ steps.generate_changelog.outputs.changelog }}
-          draft: false
-          prerelease: false
