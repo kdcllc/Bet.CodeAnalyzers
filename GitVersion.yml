@@ -11,7 +11,7 @@ branches:
     label: useBranchName
     regex: ^features?[/-]
   develop:
-    mode: ManualDeployment
+    mode: ContinuousDeployment
     label: preview
     regex: ^dev(elop)?(ment)?$
 ignore:

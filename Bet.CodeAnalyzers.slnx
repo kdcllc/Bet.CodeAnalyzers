@@ -13,4 +13,5 @@
   </Folder>
   <Project Path="src/Bet.CodeAnalyzers/Bet.CodeAnalyzers.csproj" />
   <Project Path="src/Bet.EditorConfig/Bet.EditorConfig.csproj" />
+  <Project Path="test/Bet.CodeAnalyzers.Tests/Bet.CodeAnalyzers.Tests.csproj"/>
 </Solution>
