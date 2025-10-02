@@ -1,0 +1,17 @@
+mode: ContinuousDelivery
+next-version: 2.0.0
+branches:
+  master:
+    mode: ManualDeployment
+    label: ''
+    regex: ^master$|^main$
+  feature:
+    mode: ContinuousDelivery
+    label: useBranchName
+    regex: ^features?[/-]
+  dev:
+    mode: ContinuousDelivery
+    regex: ^dev$
+ignore:
+  sha: []
+merge-message-formats: {}

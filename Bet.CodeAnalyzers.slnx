@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/build/">
+    <File Path="build/dependecies.props" />
+    <File Path="build/settings.props" />
+    <File Path="build/sources.props" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="src/Bet.CodeAnalyzers/Bet.CodeAnalyzers.csproj" />
+  <Project Path="src/Bet.EditorConfig/Bet.EditorConfig.csproj" />
+  <Project Path="test/Bet.CodeAnalyzers.Tests/Bet.CodeAnalyzers.Tests.csproj"/>
+</Solution>

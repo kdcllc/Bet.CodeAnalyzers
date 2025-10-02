@@ -1,0 +1,94 @@
+{
+  "categories": [
+    {
+      "title": "## � Breaking Changes",
+      "labels": ["breaking-change"],
+      "rules": [
+        {
+          "pattern": "BREAKING CHANGE:",
+          "on_property": "title"
+        }
+      ]
+    },
+    {
+      "title": "## �🚀 Features",
+      "labels": ["feature", "enhancement"],
+      "rules": [
+        {
+          "pattern": "CHANGE:",
+          "on_property": "title"
+        }
+      ]
+    },
+    {
+      "title": "## 🐛 Bug Fixes",
+      "labels": ["bug", "fix"],
+      "rules": [
+        {
+          "pattern": "FIX:",
+          "on_property": "title"
+        }
+      ]
+    },
+    {
+      "title": "## � Security",
+      "labels": ["security"],
+      "rules": [
+        {
+          "pattern": "SECURITY:",
+          "on_property": "title"
+        }
+      ]
+    },
+    {
+      "title": "## 🧪 Tests",
+      "labels": ["tests"],
+      "rules": [
+        {
+          "pattern": "TESTS:",
+          "on_property": "title"
+        }
+      ]
+    },
+    {
+      "title": "## 🔧 Maintenance",
+      "labels": ["maintenance", "chore"],
+      "rules": [
+        {
+          "pattern": "CHORE:",
+          "on_property": "title"
+        }
+      ]
+    },
+    {
+      "title": "## 🔀 Other Changes",
+      "labels": []
+    }
+  ],
+  "ignore_labels": [
+    "ignore-for-release"
+  ],
+  "sort": "ASC",
+  "template": "${{CHANGELOG}}",
+  "pr_template": "- ${{TITLE}} (#${{NUMBER}})",
+  "empty_template": "- No changes",
+  "transformers": [
+    {
+      "pattern": "^(CHORE|FIX|CHANGE|BREAKING CHANGE|TESTS|SECURITY|COMPLEX):\\s*(.*)$",
+      "target": "$2"
+    }
+  ],
+  "max_tags_to_fetch": 200,
+  "max_pull_requests": 200,
+  "max_back_track_time_days": 365,
+  "exclude_merge_branches": [
+    "kdcllc/Bet.CodeAnalyzers"
+  ],
+  "tag_resolver": {
+    "method": "sort",
+    "filter": {
+      "pattern": "v?\\d+\\.\\d+\\.\\d+.*",
+      "flags": "gu"
+    }
+  }
+}

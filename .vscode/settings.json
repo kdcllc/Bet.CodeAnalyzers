@@ -6,5 +6,18 @@
         "*.targets": "xml",
         "*.tasks": "xml",
         "Dockerfile*": "dockerfile"
-    }
+    },
+    "github.copilot.chat.commitMessageGeneration.instructions": [
+        {
+            "file": ".github/instructions/commit-message.instructions.md"
+        }
+    ],
+    "github.copilot.chat.codesearch.enabled": true,
+    "chat.agent.maxRequests": 100,
+
+    "dotnet-test-explorer.enableTelemetry": false,
+    "dotnet-test-explorer.testProjectPath": "/test/**/*.csproj",
+    "dotnet-test-explorer.autoExpandTree": true,
+    "dotnet-test-explorer.pathForResultFile": "TestResults",
+    "dotnet-test-explorer.addProblems": true
 }
