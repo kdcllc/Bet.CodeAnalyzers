@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
+## [2.0.0-17] - 2025-10-02
+
+- No changes
+
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
 ## [1.0.11] - 2025-10-01
 
 ### 🚀 Features
@@ -33,6 +45,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated to target .NET Standard 2.0
 - Improved packaging and development dependency configuration
 
-[Unreleased]: https://github.com/kdcllc/Bet.CodeAnalyzers/compare/v1.0.11...HEAD
+
+[Unreleased]: https://github.com/kdcllc/Bet.CodeAnalyzers/compare/v2.0.0-17...HEAD
+[2.0.0-17]: https://github.com/kdcllc/Bet.CodeAnalyzers/compare/v1.0.12...v2.0.0-17
 [2.0.0-preview1]: https://github.com/kdcllc/Bet.CodeAnalyzers/releases/tag/v2.0.0-preview1
 [1.0.11]: https://github.com/kdcllc/Bet.CodeAnalyzers/compare/1.0.11...v1.0.11
